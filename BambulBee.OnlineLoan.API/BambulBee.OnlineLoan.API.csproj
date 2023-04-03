@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Cors" Version="5.2.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BambulBee.OnlineLoan.BL\BambulBee.OnlineLoan.BL.csproj" />
+    <ProjectReference Include="..\BambulBee.OnlineLoan.MODEL\BambulBee.OnlineLoan.MODEL.csproj" />
+  </ItemGroup>
+
+
+</Project>
