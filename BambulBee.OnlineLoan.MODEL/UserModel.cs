@@ -11,6 +11,8 @@ namespace BumbleBee.OnlineLoan.MODEL
 
         public string Password { get; set; }
 
+        public int UserType { get; set; }
+
         public string Email { get; set; }
 
         public string MobileNo { get; set; }
@@ -23,13 +25,13 @@ namespace BumbleBee.OnlineLoan.MODEL
 
         public DateTime CreatedDateTime { get; set; }
 
-        public string CreatedBy { get; set; }
+        public string CreatedUser { get; set; }
 
         public string CreatedMachine { get; set; }
 
         public DateTime? ModifiedDateTime { get; set; }
 
-        public string ModifiedBy { get; set; }
+        public string ModifiedUser { get; set; }
 
         public string ModifiedMachine { get; set; }
     }

@@ -11,54 +11,55 @@ namespace BumbleBee.OnlineLoan.REPOSITORY.Models
     [Table("User")]
     public class User
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Column(Order = 0)]
-        public int UserID { get; set; }
 
-        [Column(Order = 1)]
-        [StringLength(100)]
-        public string UserName { get; set; }
+            [Key]
+            [Column(Order = 0)]
+            [DatabaseGenerated(DatabaseGeneratedOption.None)]
+            public int UserID { get; set; }
 
-        [Column(Order = 3)]
-        [StringLength(250)]
-        public string Email { get; set; }
+            [Column(Order = 1)]
+            public string UserName { get; set; }
 
-
-        [Column(Order = 4)]
-        [StringLength(100)]
-        public string Password { get; set; }
-
-        [Column(Order = 5)]
-        [StringLength(100)]
-        public string MobileNo { get; set; }
-
-        [Column(Order = 6)]
-        public DateTime? ExpiryDate { get; set; }
-
-        [Column(Order = 7)]
-        public int? MaximumAttemps { get; set; }
-
-        [Column(Order = 8)]
-        public int? Status { get; set; }
+            [Column(Order = 2)]
+            public string Password { get; set; }
 
 
-        public DateTime? CreatedDateTime { get; set; }
+            [Column(Order = 3)]
+            public int UserType { get; set; }
 
-        [StringLength(50)]
-        public string CreatedUser { get; set; }
+            [Column(Order = 4)]
+            public string Email { get; set; }
 
-        [StringLength(50)]
-        public string CreatedMachine { get; set; }
+            [Column(Order = 5)]
+            public string MobileNo { get; set; }
 
-        public DateTime? ModifiedDateTime { get; set; }
+            [Column(Order = 6)]
+            public DateTime? ExpiryDate { get; set; }
 
-        [StringLength(50)]
-        public string ModifiedUser { get; set; }
+            [Column(Order = 7)]
+            public int MaximumAttemps { get; set; }
 
-        [StringLength(50)]
-        public string ModifiedMachine { get; set; }
+            [Column(Order = 8)]
+            public int Status { get; set; }
 
+            [Column(Order = 9)]
+            public DateTime CreatedDateTime { get; set; }
 
-    }
+            [Column(Order = 10)]
+            public string CreatedUser { get; set; }
+
+            [Column(Order = 11)]
+            public string CreatedMachine { get; set; }
+
+            [Column(Order = 12)]
+            public DateTime? ModifiedDateTime { get; set; }
+
+            [Column(Order = 13)]
+            public string ModifiedUser { get; set; }
+
+            [Column(Order = 14)]
+            public string ModifiedMachine { get; set; }
+        }
+
+   
 }

@@ -19,7 +19,7 @@ namespace BumbleBee.OnlineLoan.REPOSITORY
         public DateTime CreatedDateTime { get; set; }
 
         [Column(Order = 3)]
-        public string CreatedBy { get; set; }
+        public string CreatedUser { get; set; }
 
         [Column(Order = 4)]
         public string CreatedMachine { get; set; }

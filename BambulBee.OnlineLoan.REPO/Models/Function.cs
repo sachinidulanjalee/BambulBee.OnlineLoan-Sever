@@ -34,7 +34,7 @@ namespace BumbleBee.OnlineLoan.REPOSITORY
         public DateTime CreatedDateTime { get; set; }
 
         [Column(Order = 8)]
-        public string CreatedBy { get; set; }
+        public string CreatedUser { get; set; }
 
         [Column(Order = 9)]
         public string CreatedMachine { get; set; }
@@ -43,7 +43,7 @@ namespace BumbleBee.OnlineLoan.REPOSITORY
         public DateTime? ModifiedDateTime { get; set; }
 
         [Column(Order = 11)]
-        public string ModifiedBy { get; set; }
+        public string ModifiedUser { get; set; }
 
         [Column(Order = 12)]
         public string ModifiedMachine { get; set; }

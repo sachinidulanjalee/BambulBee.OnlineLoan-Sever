@@ -33,7 +33,7 @@ namespace BumbleBee.OnlineLoan.BL
               _oUserFunctionAllocationModel.UserID = UserID;
               _oUserFunctionAllocationModel.FunctionID = Convert.ToInt32(_oUserModel.FuncationIDs[count]);
               _oUserFunctionAllocationModel.CreatedDateTime = _oUserModel.CreatedDateTime;
-              _oUserFunctionAllocationModel.CreatedBy = _oUserModel.CreatedBy;
+              _oUserFunctionAllocationModel.CreatedUser = _oUserModel.CreatedUser;
               _oUserFunctionAllocationModel.CreatedMachine = _oUserModel.CreatedMachine;
 
               _oUserFunctionAllocationBL.Add(adapter, _oUserFunctionAllocationModel);
@@ -52,7 +52,7 @@ namespace BumbleBee.OnlineLoan.BL
       }
     }
 
-        public bool Edit(UserModel _oUserModel)
+    public bool Edit(UserModel _oUserModel)
         {
       try
       {
@@ -71,7 +71,7 @@ namespace BumbleBee.OnlineLoan.BL
               _oUserFunctionAllocationModel.UserID = _oUserModel.UserID;
               _oUserFunctionAllocationModel.FunctionID = Convert.ToInt32(_oUserModel.FuncationIDs[count]);
               _oUserFunctionAllocationModel.CreatedDateTime = _oUserModel.CreatedDateTime;
-              _oUserFunctionAllocationModel.CreatedBy = _oUserModel.CreatedBy;
+              _oUserFunctionAllocationModel.CreatedUser = _oUserModel.CreatedUser;
               _oUserFunctionAllocationModel.CreatedMachine = _oUserModel.CreatedMachine;
 
               _oUserFunctionAllocationBL.Add(adapter, _oUserFunctionAllocationModel);
@@ -121,16 +121,17 @@ namespace BumbleBee.OnlineLoan.BL
                                           UserID = a.UserID,
                                           UserName = a.UserName,
                                           Password = a.Password,
+                                          UserType = a.UserType,
                                           Email = a.Email,
                                           MobileNo = a.MobileNo,
                                           ExpiryDate = a.ExpiryDate,
                                           MaximumAttemps = a.MaximumAttemps,
                                           Status = a.Status,
                                           CreatedDateTime = a.CreatedDateTime,
-                                          CreatedBy = a.CreatedBy,
+                                          CreatedUser = a.CreatedUser,
                                           CreatedMachine = a.CreatedMachine,
                                           ModifiedDateTime = a.ModifiedDateTime,
-                                          ModifiedBy = a.ModifiedBy,
+                                          ModifiedUser = a.ModifiedUser,
                                           ModifiedMachine = a.ModifiedMachine,
                                           FuncationIDs = lstUserFunctionAllocationModel.FindAll(x => x.UserID == a.UserID).Select(x => x.FunctionID.ToString()).ToList(),
                                           }).ToList();
@@ -146,6 +147,28 @@ namespace BumbleBee.OnlineLoan.BL
       }
     }
 
-    
-  }
+        public bool UserAdd(UserModel _oUserModel)
+        {
+            try
+            {
+                bool status = false;
+
+                using (DataAdapter adapter = new DataAdapter())
+                {
+                    int UserID = _oUserBL.Add(adapter, _oUserModel);
+
+                    
+                    status = adapter.Save();
+                }
+                return status;
+            }
+            catch (Exception ex)
+            {
+                Logger.Write(ex);
+                throw ex;
+            }
+        }
+
+
+    }
 }

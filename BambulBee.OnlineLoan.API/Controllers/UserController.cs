@@ -27,7 +27,14 @@ namespace BambulBee.OnlineLoan.API.Controllers
             return _oUserEntityBL.Add(_oUserModel);
         }
 
-    [HttpPut]
+        [HttpPost]
+        [ActionName("UserAdd")]
+        public bool UserAdd([FromBody] UserModel _oUserModel)
+        {
+            return _oUserEntityBL.UserAdd(_oUserModel);
+        }
+
+        [HttpPut]
     [ActionName("Edit")]
     public bool Edit([FromBody] UserModel _oUserModel)
     {

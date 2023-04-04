@@ -10,7 +10,7 @@ namespace BumbleBee.OnlineLoan.MODEL
 
         public DateTime CreatedDateTime { get; set; }
 
-        public string CreatedBy { get; set; }
+        public string CreatedUser { get; set; }
 
         public string CreatedMachine { get; set; }
     }
