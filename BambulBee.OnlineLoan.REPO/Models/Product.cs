@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BumbleBee.OnlineLoan.REPOSITORY
+namespace BambulBee.OnlineLoan.REPOSITORY
 {
     [Table("Product")]
     public class Product

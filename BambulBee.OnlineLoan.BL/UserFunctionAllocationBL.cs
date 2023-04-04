@@ -1,7 +1,6 @@
 using AutoMapper;
 using BambulBee.OnlineLoan.REPOSITORY;
 using BumbleBee.OnlineLoan.MODEL;
-using BumbleBee.OnlineLoan.REPOSITORY;
 using System;
 using System.Collections.Generic;
 

@@ -1,7 +1,6 @@
 using AutoMapper;
 using BambulBee.OnlineLoan.REPOSITORY;
 using BumbleBee.OnlineLoan.MODEL;
-using BumbleBee.OnlineLoan.REPOSITORY;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,13 +15,13 @@ namespace BumbleBee.OnlineLoan.BL
             {
                 var config = new MapperConfiguration(cfg =>
                 {
-                    cfg.CreateMap<REPOSITORY.Function, FunctionModel>();
+                    cfg.CreateMap<Function, FunctionModel>();
                 });
 
                 IMapper iMapper = config.CreateMapper();
                 using (DataAdapter adapter = new DataAdapter())
                 {
-                    return iMapper.Map<List<REPOSITORY.Function>, List<FunctionModel>>(adapter.FunctionRepository.GetAll());
+                    return iMapper.Map<List<Function>, List<FunctionModel>>(adapter.FunctionRepository.GetAll());
                 }
             }
             catch (Exception ex)
@@ -55,13 +54,13 @@ namespace BumbleBee.OnlineLoan.BL
         {
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<REPOSITORY.Function, FunctionModel>();
+                cfg.CreateMap<Function, FunctionModel>();
             });
 
             IMapper iMapper = config.CreateMapper();
             using (DataAdapter adapter = new DataAdapter())
             {
-                return iMapper.Map<REPOSITORY.Function, FunctionModel>(adapter.FunctionRepository.GetById(x => x.FunctionID == functionID));
+                return iMapper.Map<Function, FunctionModel>(adapter.FunctionRepository.GetById(x => x.FunctionID == functionID));
             }
         }
 

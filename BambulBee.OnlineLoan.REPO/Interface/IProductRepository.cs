@@ -1,4 +1,4 @@
-﻿using BumbleBee.OnlineLoan.REPOSITORY.Models;
+﻿using BambulBee.OnlineLoan.REPOSITORY;
 using System;
 using System.Collections.Generic;
 using System.Linq;

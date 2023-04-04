@@ -6,28 +6,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BumbleBee.OnlineLoan.REPOSITORY.Models
+namespace BambulBee.OnlineLoan.REPOSITORY
 {
-    [Table("InstallemtPlan")]
-    public class InstallemtPlan
+    [Table("Transaction")]
+    public class Transaction
     {
             [Key]
             [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
             [Column(Order = 0)]
-            public int InstllmentPlanId { get; set; }
+            public int TransactionId { get; set; }
 
             [Column(Order = 1)]
             [StringLength(100)]
-            public string Description { get; set; }
+            public int ProductId { get; set; }
 
             [Column(Order = 2)]
-            public decimal InterestRate  { get; set; }
+            [StringLength(100)]
+            public int UserId { get; set; }
 
             [Column(Order = 3)]
-            public Decimal MaximumLoanAmount { get; set; }
+            public int InstallmentPlan { get; set; }
+
             [Column(Order = 4)]
-            public int Duration { get; set; }
-            public DateTime? CreatedDateTime { get; set; }
+            public decimal InterestRate  { get; set; }
+
+            [Column(Order = 5)]
+            public Decimal LoanAmount { get; set; }
+
+            [Column(Order = 6)]
+            public Decimal UsedAmount { get; set; }
+     
+            public DateTime CreatedDateTime { get; set; }
 
             [StringLength(50)]
             public string CreatedUser { get; set; }

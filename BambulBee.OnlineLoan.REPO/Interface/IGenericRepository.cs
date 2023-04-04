@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BumbleBee.OnlineLoan.REPOSITORY.Interface
+namespace BambulBee.OnlineLoan.REPOSITORY.Interface
 {
     public interface IGenericRepository<T> where T : class
     {

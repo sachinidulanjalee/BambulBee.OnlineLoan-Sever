@@ -18,11 +18,73 @@ namespace BumbleBee.OnlineLoan.API.Controllers
         }
 
 
+        [HttpPost]
+        [ActionName("Add")]
+        public bool Add([FromBody] CustomerModel _oCustomerModel)
+        {
+            return _oCustomerBL.Add(_oCustomerModel);
+        }
+
+        [HttpPut]
+        [ActionName("Edit")]
+        public bool Edit([FromBody] CustomerModel _oCustomerModel)
+        {
+            return _oCustomerBL.Edit(_oCustomerModel);
+        }
+
+        [HttpDelete("{bookID}")]
+        [ActionName("Delete")]
+        public bool Delete([FromRoute] int bookID)
+        {
+            return _oCustomerBL.Delete(bookID);
+        }
+
+        [HttpPost]
+        [ActionName("BulkRemove")]
+        public bool BulkRemove([FromBody] List<CustomerModel> data)
+        {
+            return _oCustomerBL.BulkDelete(data);
+        }
+
+        [HttpGet("{bookID}")]
+        [ActionName("GetById")]
+        public CustomerModel GetById([FromRoute] int bookID)
+        {
+            return _oCustomerBL.GetById(bookID);
+        }
+
+        [HttpGet("{status}")]
+        [ActionName("GetComboModelByStatus")]
+        public List<ComboModel> GetComboModelByStatus([FromRoute] int status)
+        {
+            return _oCustomerBL.GetComboModelByStatus(status);
+        }
+
         [HttpGet]
         [ActionName("GetAll")]
         public List<CustomerModel> GetAll()
         {
             return _oCustomerBL.GetAll();
+        }
+
+        [HttpGet]
+        [ActionName("GetMemberCount")]
+        public int GetMemberCount()
+        {
+            return _oCustomerBL.GetMemberCount();
+        }
+        [HttpGet]
+        [ActionName("GetAllComboModel")]
+        public List<ComboModel> GetAllComboModel()
+        {
+            return _oCustomerBL.GetAllComboModel();
+        }
+
+        [HttpGet("{field}/{value}")]
+        [ActionName("GetRecordeByFieldValue")]
+        public CustomerModel GetRecordeByFieldValue([FromRoute] string field, string value)
+        {
+            return _oCustomerBL.GetRecordeByFieldValue(field, value);
         }
 
     }

@@ -1,9 +1,9 @@
-﻿using BumbleBee.OnlineLoan.REPOSITORY.Interface;
-using BumbleBee.OnlineLoan.REPOSITORY.Models;
+﻿using BambulBee.OnlineLoan.REPOSITORY.Interface;
+using BumbleBee.OnlineLoan.REPOSITORY;
 using BumbleBee.OnlineLoan.REPOSITORY.Repository;
 using System;
 
-namespace BumbleBee.OnlineLoan.REPOSITORY
+namespace BambulBee.OnlineLoan.REPOSITORY
 {
     public class DataAdapter : IDisposable
     {
@@ -47,6 +47,7 @@ namespace BumbleBee.OnlineLoan.REPOSITORY
                 return customerGenericRepository;
             }
         }
+
 
         #endregion customer
 
@@ -137,6 +138,23 @@ namespace BumbleBee.OnlineLoan.REPOSITORY
         }
 
         #endregion UserFunctionAllocation
+
+        #region LoanTransaction
+
+        private IGenericRepository<Transaction> ITransactionRepository;
+
+        public IGenericRepository<Transaction> TransactionGenericRepository
+        {
+            get
+            {
+                if (this.ITransactionRepository == null)
+                    this.ITransactionRepository = new GenericRepository<Transaction>(_context);
+                return ITransactionRepository;
+            }
+        }
+
+
+        #endregion LoanTransaction
 
     }
 }

@@ -65,5 +65,12 @@ namespace BumbleBee.OnlineLoan.API.Controllers
         {
             return _oProductBL.BulkDelete(data);
         }
+
+        [HttpGet]
+        [ActionName("AllCustomerProductGetAll")]
+        public List<ProductModel> AllCustomerProductGetAll()
+        {
+            return _oProductBL.AllCustomerProductGetAll();
+        }
     }
 }

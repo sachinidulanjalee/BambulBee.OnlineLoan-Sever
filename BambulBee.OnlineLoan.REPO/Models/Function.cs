@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace BumbleBee.OnlineLoan.REPOSITORY
+namespace BambulBee.OnlineLoan.REPOSITORY
 {
     [Table("Function")]
     public class Function

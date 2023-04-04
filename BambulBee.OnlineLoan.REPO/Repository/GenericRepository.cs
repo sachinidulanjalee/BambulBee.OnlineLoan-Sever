@@ -1,5 +1,5 @@
 ﻿using BambulBee.OnlineLoan.REPOSITORY;
-using BumbleBee.OnlineLoan.REPOSITORY.Interface;
+using BambulBee.OnlineLoan.REPOSITORY.Interface;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

@@ -2,67 +2,94 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace BumbleBee.OnlineLoan.REPOSITORY
+namespace BambulBee.OnlineLoan.REPOSITORY
 {
-    [Table("Custormer")]
+    [Table("Customer")]
     public class Customer
     {
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column(Order = 0)]
-        public int CustomerId { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int CustomerID { get; set; }
 
         [Column(Order = 1)]
-        [StringLength(50)]
-        public string FirstName { get; set; }
+        public int UserID { get; set; }
 
         [Column(Order = 2)]
-        [StringLength(50)]
-        public string LastName { get; set; }
+        public string NICPassport { get; set; }
 
         [Column(Order = 3)]
-        public DateTime DateOfBirth { get; set; }
+        public int Title { get; set; }
 
         [Column(Order = 4)]
-        [StringLength(100)]
-        public string email { get; set; }
+        public int Sex { get; set; }
 
         [Column(Order = 5)]
-        public string Mobile { get; set; }
+        public string Surname { get; set; }
 
         [Column(Order = 6)]
-        public int? Gender { get; set; }
+        public string FirstName { get; set; }
 
         [Column(Order = 7)]
-        [StringLength(10)]
-        public string NICNo { get; set; }
+        public string ShortName { get; set; }
 
         [Column(Order = 8)]
-        public DateTime DateOfJoining { get; set; }
+        public int Nationality { get; set; }
+
         [Column(Order = 9)]
-        [StringLength(250)]
-        public string Password { get; set; }
+        public string Address01 { get; set; }
 
         [Column(Order = 10)]
-        public int? Status { get; set; }
+        public string Address02 { get; set; }
 
-        public DateTime? CreatedDateTime { get; set; }
+        [Column(Order = 11)]
+        public string Address03 { get; set; }
 
-        [StringLength(50)]
-        public string CreatedUser { get; set; }
+        [Column(Order = 12)]
+        public string City { get; set; }
 
-        [StringLength(50)]
+        [Column(Order = 13)]
+        public string Province { get; set; }
+
+        [Column(Order = 14)]
+        public string PostalCode { get; set; }
+
+        [Column(Order = 15)]
+        public string Country { get; set; }
+
+        [Column(Order = 16)]
+        public string Telephone { get; set; }
+
+        [Column(Order = 17)]
+        public string Mobile { get; set; }
+
+        [Column(Order = 18)]
+        public string Email { get; set; }
+
+        [Column(Order = 19)]
+        public int Status { get; set; }
+
+        [Column(Order = 20)]
+        public DateTime? InactiveDate { get; set; }
+
+        [Column(Order = 21)]
+        public DateTime CreatedDateTime { get; set; }
+
+        [Column(Order = 22)]
+        public string CreatedBy { get; set; }
+
+        [Column(Order = 23)]
         public string CreatedMachine { get; set; }
 
+        [Column(Order = 24)]
         public DateTime? ModifiedDateTime { get; set; }
 
-        [StringLength(50)]
-        public string ModifiedUser { get; set; }
+        [Column(Order = 25)]
+        public string ModifiedBy { get; set; }
 
-        [StringLength(50)]
+        [Column(Order = 26)]
         public string ModifiedMachine { get; set; }
-
 
     }
 

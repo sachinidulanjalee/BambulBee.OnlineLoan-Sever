@@ -187,5 +187,46 @@ namespace BumbleBee.OnlineLoan.BUSINESS
             }
             return _Result;
         }
+
+        public List<ProductModel> AllCustomerProductGetAll()
+        {
+
+            List<ProductModel> lstProductModel = new List<ProductModel>();
+
+            try
+            {
+                using (DataAdapter adapter = new DataAdapter())
+                {
+                    var _Category = adapter.CategoryGenericRepository.GetAll();
+                    var _Product = adapter.ProductGenericRepository.GetAll();
+
+                    lstProductModel = (from a in _Product
+                                       join b in _Category
+                                      on a.CategoryId equals b.CategoryId
+                                       select new ProductModel
+                                       {
+                                           ProductId = a.ProductId,
+                                           ProductName = a.ProductName,
+                                           CategoryId = a.CategoryId,
+                                           Brand = a.Brand,
+                                           UnitPrice = a.UnitPrice,
+                                           Status = a.Status,
+                                           CategoryName = b.CategoryName,
+                                           CreatedDateTime = a.CreatedDateTime,
+                                           CreatedUser = a.CreatedUser,
+                                           CreatedMachine = a.CreatedMachine,
+                                           ModifiedDateTime = a.ModifiedDateTime,
+                                           ModifiedUser = a.ModifiedUser,
+                                           ModifiedMachine = a.ModifiedMachine,
+                                       }).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Write(ex);
+            }
+
+            return lstProductModel;
+        }
     }
 }
