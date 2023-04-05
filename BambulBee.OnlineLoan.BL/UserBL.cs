@@ -22,7 +22,7 @@ namespace BumbleBee.OnlineLoan.BL
                 });
 
                 IMapper iMapper = config.CreateMapper();
-                _oUserModel.Password = DMSSWE.CryptoUtil.Encrypt(_oUserModel.UserName, _oUserModel.Password);
+                _oUserModel.Password = DMSSWE.CryptoUtil.Encrypt(_oUserModel.UserName.Trim(), _oUserModel.Password);
 
                 dataAdapter.UserRepository.Add(iMapper.Map<UserModel, User>(_oUserModel));
                 dataAdapter.Save();
@@ -199,8 +199,8 @@ namespace BumbleBee.OnlineLoan.BL
 
             try
             {
-                var _oUser = GetByUserNamePassword(userName, password);
-              //  var _oUser = GetByUserNamePassword(userName, CryptoUtil.Encrypt(userName,password));
+                //var _oUser = GetByUserNamePassword(userName, password);
+                  var _oUser = GetByUserNamePassword(userName, DMSSWE.CryptoUtil.Encrypt(userName.Trim(),password));
                 if (_oUser == null)
                 {
                     return new { result = 0, UserID = 0,UserName="", msg = "Invalid User." };

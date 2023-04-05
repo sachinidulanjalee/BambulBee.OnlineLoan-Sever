@@ -4,6 +4,9 @@ namespace BambulBee.OnlineLoan.REPOSITORY
 {
     public class DataContext : DbContext
     {
+        public DataContext()
+        { }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("data source=LT-PE4-29\\SQLEXPRESS; initial catalog=BumbleBeeOnlineLoan;persist security info=True;TrustServerCertificate=True;user id=sa;password=#compaq123;");
