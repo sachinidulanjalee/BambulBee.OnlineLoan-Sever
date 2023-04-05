@@ -60,4 +60,11 @@ namespace BambulBee.OnlineLoan.COMMON
         Inactive = 2
     }
 
+    public enum sex
+    {
+        Male = 1,
+        Female = 2,
+        Other
+    }
+
 }
