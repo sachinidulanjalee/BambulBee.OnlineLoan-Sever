@@ -32,11 +32,11 @@ namespace BumbleBee.OnlineLoan.API.Controllers
             return _oCustomerBL.Edit(_oCustomerModel);
         }
 
-        [HttpDelete("{bookID}")]
+        [HttpDelete("{customerId}")]
         [ActionName("Delete")]
-        public bool Delete([FromRoute] int bookID)
+        public bool Delete([FromRoute] int customerId)
         {
-            return _oCustomerBL.Delete(bookID);
+            return _oCustomerBL.Delete(customerId);
         }
 
         [HttpPost]
@@ -46,11 +46,11 @@ namespace BumbleBee.OnlineLoan.API.Controllers
             return _oCustomerBL.BulkDelete(data);
         }
 
-        [HttpGet("{bookID}")]
+        [HttpGet("{userId}")]
         [ActionName("GetById")]
-        public CustomerModel GetById([FromRoute] int bookID)
+        public CustomerModel GetById([FromRoute] int userId)
         {
-            return _oCustomerBL.GetById(bookID);
+            return _oCustomerBL.GetById(userId);
         }
 
         [HttpGet("{status}")]

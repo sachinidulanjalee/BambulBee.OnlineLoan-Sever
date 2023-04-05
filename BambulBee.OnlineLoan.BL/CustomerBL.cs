@@ -77,7 +77,7 @@ namespace BumbleBee.OnlineLoan.BUSINESS
             }
         }
 
-        public CustomerModel GetById(int customerID)
+        public CustomerModel GetById(int userId)
         {
             var config = new MapperConfiguration(cfg =>
             {
@@ -87,7 +87,7 @@ namespace BumbleBee.OnlineLoan.BUSINESS
             IMapper iMapper = config.CreateMapper();
             using (DataAdapter adapter = new DataAdapter())
             {
-                return iMapper.Map<Customer, CustomerModel>(adapter.CustomerGenericRepository.GetById(x => x.CustomerID == customerID));
+                return iMapper.Map<Customer, CustomerModel>(adapter.CustomerGenericRepository.GetById(x => x.UserID == userId));
             }
         }
 
