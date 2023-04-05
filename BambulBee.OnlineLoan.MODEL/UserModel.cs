@@ -16,6 +16,7 @@ namespace BumbleBee.OnlineLoan.MODEL
         public string Email { get; set; }
 
         public string MobileNo { get; set; }
+        public DateTime? DateOfBirth { get; set; }
 
         public DateTime? ExpiryDate { get; set; }
 
